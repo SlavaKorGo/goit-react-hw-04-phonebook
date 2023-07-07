@@ -11,12 +11,6 @@ export default function App() {
   const [contacts, setContacts] = useState([]);
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    const storedContacts = JSON.parse(localStorage.getItem(LS_KEY));
-    if (storedContacts) {
-      setContacts(storedContacts);
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(contacts));
