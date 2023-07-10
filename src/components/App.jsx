@@ -8,9 +8,8 @@ import css from './Form/Form.module.css';
 const LS_KEY = 'contactsLS';
 
 export default function App() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem(LS_KEY)) || []);
   const [filter, setFilter] = useState('');
-
 
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(contacts));
